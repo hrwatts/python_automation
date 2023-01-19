@@ -24,6 +24,7 @@ var/
 pip-log.txt
 pip-delete-this-directory.txt
 auto_commit.py
+new_commit.py
 
 # Unit test / coverage reports
 .tox/
