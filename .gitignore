@@ -25,6 +25,7 @@ pip-log.txt
 pip-delete-this-directory.txt
 auto_commit.py
 new_commit.py
+automate_gitpython.py
 
 # Unit test / coverage reports
 .tox/
