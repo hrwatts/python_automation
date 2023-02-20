@@ -26,6 +26,7 @@ pip-delete-this-directory.txt
 auto_commit.py
 new_commit.py
 automate_gitpython.py
+automate_pygithub.py
 
 # Unit test / coverage reports
 .tox/
@@ -51,3 +52,6 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+.env
+.gitignore
