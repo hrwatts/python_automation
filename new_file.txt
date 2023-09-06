@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 This is the content of the new file.
+=======
+This is the content of the new file
+>>>>>>> origin/main
