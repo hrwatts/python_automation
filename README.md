@@ -1,22 +1,38 @@
 # Python Automation
 
-The package is a tool for automatically merging commits on GitHub. It uses machine learning algorithms to determine which pull requests can be safely merged without causing conflicts or breaking tests.
+![CI](https://github.com/hrwatts/python_automation/actions/workflows/ci.yml/badge.svg)
 
-## Getting Started
+A tool for automatically managing pull requests on GitHub. The repo also includes a scheduled CI/maintenance pipeline that commits real, timestamped run reports on a daily schedule.
 
-To use the package, email the author for the source code.
+## Local Setup
 
-The package analyzes pull requests and automatically merges any that meet the necessary criteria.
+```bash
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
+
+pip install -r requirements.txt
+pytest -q
+```
+
+## Automated Maintenance
+
+A GitHub Actions workflow (`scheduled-maintenance.yml`) runs daily at UTC midnight. It executes `scripts/maintenance.py`, which appends a timestamped entry to `reports/run_log.txt` containing Python version, file counts, and run status. If the file changed, the workflow commits and pushes with a real timestamp from the Actions runner — no dates are forged or overridden.
+
+To opt out of scheduled runs, disable the workflow under **Actions → Scheduled Maintenance → ⋯ → Disable workflow** in the GitHub UI.
 
 ## Features
 
-- Automatic merging of pull requests
-- Machine learning algorithms to ensure safe merges
-- Easy installation and setup
+- Automatic pull-request analysis and merging
+- Daily maintenance commits via GitHub Actions
+- Full pytest suite with CI gate on push/PR
+- `black` formatting and `flake8` linting enforced in CI
 
 ## Contributing
 
-If you would like to contribute, please submit a pull request with your changes. All contributions are welcome!
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, the ethics policy, and the PR checklist.
 
 ## License
 
